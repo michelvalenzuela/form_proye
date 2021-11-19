@@ -1,0 +1,14 @@
+<% if @project.errors.any? %>
+<div id="error_explanation">
+<h2>Se encontraron <%= pluralize(@project.errors.count, "errores") %></h2>
+<ul>
+<% @project.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+</div>
+<% else %>
+<h2> Tu proyecto ha sido ingresado correctamente! </h2>
+<%= link_to 'Back', pages_index_path %>
+<% end %>
+

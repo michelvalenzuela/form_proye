@@ -1,0 +1,44 @@
+<h3>Elige modo de filtrado:</h3>
+
+<form method="get" action="/pages/view">
+
+    <div class="mb-3">
+        <label for="estado" class="form-label">Estado</label>
+        <select id="estado" name="status" class="form-select" aria-label="Seleccionar estado del proyecto">
+            <option value="propuesta">Propuesta</option>
+            <option value="en_progreso">En progreso</option>
+            <option value="terminado">Terminado</option>
+        </select>
+    </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+
+
+<table class="table table-info">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Título</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Fecha de inicio</th>
+            <th scope="col">Fecha de termino</th>
+            <th scope="col">Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @projects.each do |project| %>
+        <tr>
+        <td><%= project.id %></td>
+        <td><%= project.tittle %></td>
+        <td><%= project.description %></td>
+        <td><%= project.starting_date %></td>
+        <td><%= project.ending_date %></td>
+        <td><%= project.status%></td>
+        </tr>  
+        <% end %>
+    </tbody>
+</table>

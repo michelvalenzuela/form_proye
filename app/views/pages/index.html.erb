@@ -1,0 +1,35 @@
+<h1>Para ver los proyectos <%= link_to 'Go_Projects', pages_view_path %></h1>
+
+<form method="get" action="/pages/create">
+
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Nombre del proyecto</label>
+        <input class="form-control" id="titulo" name="title">
+    </div>
+
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>   
+         <textarea class="form-control" id="descripcion" name="description"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="starting_date" class="form-label">Fecha de inicio</label>
+        <input class="form-control" id="starting_date" type="date" name="starting_date">
+    </div>
+ 
+    <div class="mb-3">
+        <label for="ending_date" class="form-label">Fecha de termino</label>
+        <input class="form-control" id="ending_date" type="date" name="ending_date">
+    </div>
+
+    <div class="mb-3">
+        <label for="estado" class="form-label">Estado</label>
+        <select id="estado" name="status" class="form-select" aria-label="Seleccionar estado del proyecto">
+            <option value="propuesta">Propuesta</option>
+            <option value="en_progreso">En progreso</option>
+            <option value="terminado">Terminado</option>
+        </select>
+    </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
